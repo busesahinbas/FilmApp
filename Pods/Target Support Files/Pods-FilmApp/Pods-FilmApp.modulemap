@@ -1,0 +1,6 @@
+framework module Pods_FilmApp {
+  umbrella header "Pods-FilmApp-umbrella.h"
+
+  export *
+  module * { export * }
+}
