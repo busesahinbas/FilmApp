@@ -20,6 +20,11 @@
 		4D85074D2A30BE3000100521 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D85074C2A30BE3000100521 /* Util.swift */; };
 		4D85074F2A30BE8300100521 /* ErrorMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D85074E2A30BE8300100521 /* ErrorMessages.swift */; };
 		4D8507522A30CE5E00100521 /* RemoteConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8507512A30CE5E00100521 /* RemoteConfig.swift */; };
+		4D8507542A3106AB00100521 /* MovieList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8507532A3106AB00100521 /* MovieList.swift */; };
+		4D8507562A310DDB00100521 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8507552A310DDB00100521 /* Service.swift */; };
+		4D8507582A310DF000100521 /* ServiceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8507572A310DF000100521 /* ServiceHelper.swift */; };
+		4D85075B2A310F4300100521 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 4D85075A2A310F4300100521 /* Alamofire */; };
+		4D85075D2A3111C200100521 /* MovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D85075C2A3111C200100521 /* MovieViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +43,10 @@
 		4D85074C2A30BE3000100521 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		4D85074E2A30BE8300100521 /* ErrorMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessages.swift; sourceTree = "<group>"; };
 		4D8507512A30CE5E00100521 /* RemoteConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfig.swift; sourceTree = "<group>"; };
+		4D8507532A3106AB00100521 /* MovieList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieList.swift; sourceTree = "<group>"; };
+		4D8507552A310DDB00100521 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		4D8507572A310DF000100521 /* ServiceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceHelper.swift; sourceTree = "<group>"; };
+		4D85075C2A3111C200100521 /* MovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewModel.swift; sourceTree = "<group>"; };
 		9307BD95EBCA85290431F0D3 /* Pods-FilmApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilmApp.release.xcconfig"; path = "Target Support Files/Pods-FilmApp/Pods-FilmApp.release.xcconfig"; sourceTree = "<group>"; };
 		BA2CA2AC9162A8E545BD5BDB /* Pods-FilmApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilmApp.debug.xcconfig"; path = "Target Support Files/Pods-FilmApp/Pods-FilmApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -48,6 +57,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				451EC80F6C5B873E030C306F /* Pods_FilmApp.framework in Frameworks */,
+				4D85075B2A310F4300100521 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +105,7 @@
 		4D8507462A30B62800100521 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4D8507532A3106AB00100521 /* MovieList.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -111,6 +122,7 @@
 		4D8507482A30B64300100521 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				4D85075C2A3111C200100521 /* MovieViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -128,6 +140,8 @@
 			isa = PBXGroup;
 			children = (
 				4D8507512A30CE5E00100521 /* RemoteConfig.swift */,
+				4D8507552A310DDB00100521 /* Service.swift */,
+				4D8507572A310DF000100521 /* ServiceHelper.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -167,6 +181,9 @@
 			dependencies = (
 			);
 			name = FilmApp;
+			packageProductDependencies = (
+				4D85075A2A310F4300100521 /* Alamofire */,
+			);
 			productName = FilmApp;
 			productReference = 4D3F792B2A2F5F1600AF6922 /* FilmApp.app */;
 			productType = "com.apple.product-type.application";
@@ -195,6 +212,9 @@
 				Base,
 			);
 			mainGroup = 4D3F79222A2F5F1600AF6922;
+			packageReferences = (
+				4D8507592A310F4300100521 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 4D3F792C2A2F5F1600AF6922 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -271,8 +291,12 @@
 				4D3F79392A2F5F1600AF6922 /* FilmApp.xcdatamodeld in Sources */,
 				4D85074F2A30BE8300100521 /* ErrorMessages.swift in Sources */,
 				4D3F792F2A2F5F1600AF6922 /* AppDelegate.swift in Sources */,
+				4D85075D2A3111C200100521 /* MovieViewModel.swift in Sources */,
 				4D3F79312A2F5F1600AF6922 /* SceneDelegate.swift in Sources */,
+				4D8507562A310DDB00100521 /* Service.swift in Sources */,
+				4D8507542A3106AB00100521 /* MovieList.swift in Sources */,
 				4D85074A2A30B69800100521 /* MainViewController.swift in Sources */,
+				4D8507582A310DF000100521 /* ServiceHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -492,6 +516,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4D8507592A310F4300100521 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4D85075A2A310F4300100521 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4D8507592A310F4300100521 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		4D3F79372A2F5F1600AF6922 /* FilmApp.xcdatamodeld */ = {
