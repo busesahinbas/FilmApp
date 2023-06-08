@@ -16,6 +16,9 @@
 		4D3F793B2A2F5F1700AF6922 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D3F793A2A2F5F1700AF6922 /* Assets.xcassets */; };
 		4D3F793E2A2F5F1700AF6922 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D3F793C2A2F5F1700AF6922 /* LaunchScreen.storyboard */; };
 		4D3F79462A309B5E00AF6922 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4D3F79452A309B5E00AF6922 /* GoogleService-Info.plist */; };
+		4D4BA2102A328DC700E6BB92 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4BA20E2A328DC700E6BB92 /* TableViewCell.swift */; };
+		4D4BA2112A328DC700E6BB92 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D4BA20F2A328DC700E6BB92 /* TableViewCell.xib */; };
+		4D4BA2132A328DE500E6BB92 /* UILabelPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4BA2122A328DE500E6BB92 /* UILabelPadding.swift */; };
 		4D85074A2A30B69800100521 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8507492A30B69800100521 /* MainViewController.swift */; };
 		4D85074D2A30BE3000100521 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D85074C2A30BE3000100521 /* Util.swift */; };
 		4D85074F2A30BE8300100521 /* ErrorMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D85074E2A30BE8300100521 /* ErrorMessages.swift */; };
@@ -39,6 +42,9 @@
 		4D3F793D2A2F5F1700AF6922 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4D3F793F2A2F5F1700AF6922 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4D3F79452A309B5E00AF6922 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4D4BA20E2A328DC700E6BB92 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		4D4BA20F2A328DC700E6BB92 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		4D4BA2122A328DE500E6BB92 /* UILabelPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelPadding.swift; sourceTree = "<group>"; };
 		4D8507492A30B69800100521 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		4D85074C2A30BE3000100521 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		4D85074E2A30BE8300100521 /* ErrorMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessages.swift; sourceTree = "<group>"; };
@@ -92,14 +98,22 @@
 				4D8507482A30B64300100521 /* ViewModel */,
 				4D3F79302A2F5F1600AF6922 /* SceneDelegate.swift */,
 				4D3F792E2A2F5F1600AF6922 /* AppDelegate.swift */,
-				4D3F79342A2F5F1600AF6922 /* Main.storyboard */,
 				4D3F793A2A2F5F1700AF6922 /* Assets.xcassets */,
-				4D3F793C2A2F5F1700AF6922 /* LaunchScreen.storyboard */,
 				4D3F793F2A2F5F1700AF6922 /* Info.plist */,
 				4D3F79372A2F5F1600AF6922 /* FilmApp.xcdatamodeld */,
 				4D3F79452A309B5E00AF6922 /* GoogleService-Info.plist */,
 			);
 			path = FilmApp;
+			sourceTree = "<group>";
+		};
+		4D4BA20B2A328D5500E6BB92 /* Xib */ = {
+			isa = PBXGroup;
+			children = (
+				4D3F79342A2F5F1600AF6922 /* Main.storyboard */,
+				4D3F793C2A2F5F1700AF6922 /* LaunchScreen.storyboard */,
+				4D4BA20F2A328DC700E6BB92 /* TableViewCell.xib */,
+			);
+			path = Xib;
 			sourceTree = "<group>";
 		};
 		4D8507462A30B62800100521 /* Model */ = {
@@ -113,8 +127,11 @@
 		4D8507472A30B63500100521 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4D4BA20B2A328D5500E6BB92 /* Xib */,
 				4D3F79322A2F5F1600AF6922 /* SplashViewController.swift */,
 				4D8507492A30B69800100521 /* MainViewController.swift */,
+				4D4BA20E2A328DC700E6BB92 /* TableViewCell.swift */,
+				4D4BA2122A328DE500E6BB92 /* UILabelPadding.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -230,6 +247,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D3F79462A309B5E00AF6922 /* GoogleService-Info.plist in Resources */,
+				4D4BA2112A328DC700E6BB92 /* TableViewCell.xib in Resources */,
 				4D3F793E2A2F5F1700AF6922 /* LaunchScreen.storyboard in Resources */,
 				4D3F793B2A2F5F1700AF6922 /* Assets.xcassets in Resources */,
 				4D3F79362A2F5F1600AF6922 /* Main.storyboard in Resources */,
@@ -285,9 +303,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D4BA2102A328DC700E6BB92 /* TableViewCell.swift in Sources */,
 				4D3F79332A2F5F1600AF6922 /* SplashViewController.swift in Sources */,
 				4D85074D2A30BE3000100521 /* Util.swift in Sources */,
 				4D8507522A30CE5E00100521 /* RemoteConfig.swift in Sources */,
+				4D4BA2132A328DE500E6BB92 /* UILabelPadding.swift in Sources */,
 				4D3F79392A2F5F1600AF6922 /* FilmApp.xcdatamodeld in Sources */,
 				4D85074F2A30BE8300100521 /* ErrorMessages.swift in Sources */,
 				4D3F792F2A2F5F1600AF6922 /* AppDelegate.swift in Sources */,
