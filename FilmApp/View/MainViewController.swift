@@ -10,45 +10,61 @@ import UIKit
 class MainViewController: UIViewController {
     
     var movieViewModel = MoviesViewModel(service: Service())
-    var searchResult : [Movie]?
+    var searchResult : [Movie] = []
     let searchController = UISearchController()
     
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Search"
-        searchController.searchResultsUpdater = self
-        navigationItem.searchController = searchController
-        fetch()
         configure()
     }
     
     func configure() {
+        title = "Search"
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.delegate = self
+        navigationItem.searchController = searchController
         registerTableView()
         tableView.dataSource = self
         tableView.delegate = self
         
     }
-    func fetch() {
-        movieViewModel.searchMovie(title: "avatar")
+    
+    func fetch(searchName: String) {
+        movieViewModel.searchMovie(title: searchName)
         movieViewModel.didFinishFetch = {
-            self.searchResult = self.movieViewModel.movieResult
-            print(self.searchResult)
+            DispatchQueue.main.async {
+                self.searchResult = self.movieViewModel.movieResult ?? []
+                print(self.searchResult)
+                self.tableView.reloadData()
+            }
         }
-        
     }
+    
 }
 
-extension MainViewController: UISearchResultsUpdating {
+extension MainViewController: UISearchResultsUpdating, UISearchBarDelegate {
+    
     func updateSearchResults(for searchController: UISearchController) {
         guard let text = searchController.searchBar.text else {
             return
         }
-        print(text)
+        let searchName = text.trimmingCharacters(in: .whitespacesAndNewlines)
+        DispatchQueue.main.async {
+            self.fetch(searchName: searchName)
+        }
+       
     }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+          if searchText.isEmpty {
+              searchResult = [] // Clear the search results
+              tableView.reloadData()
+          }
+      }
 }
-
+ 
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     
     func registerTableView(){
@@ -56,7 +72,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return searchResult.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -64,7 +80,8 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as? TableViewCell
         else { return UITableViewCell() }
         
-        cell.typeLabel.text = "test"
+        cell.configure(result: searchResult, indexPath: indexPath)
+    
         return cell
     }
     
