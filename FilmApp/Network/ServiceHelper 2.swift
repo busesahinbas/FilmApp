@@ -12,14 +12,11 @@ let apiUrl = "https://www.omdbapi.com/?apikey=\(apiKey)"
 
 enum Endpoints {
     case search
-    case detail
 
     var url: String {
         switch self {
         case .search:
             return apiUrl + "&s="
-        case .detail:
-            return apiUrl + "&t="
         }
     }
 }

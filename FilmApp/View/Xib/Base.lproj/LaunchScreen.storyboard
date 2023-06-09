@@ -15,6 +15,30 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="Pru-gG-naY">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="topImage" translatesAutoresizingMaskIntoConstraints="NO" id="wkg-fV-GV2">
+                                        <rect key="frame" x="0.0" y="0.0" width="329" height="119"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bottomImage" translatesAutoresizingMaskIntoConstraints="NO" id="JFK-rf-1NB">
+                                        <rect key="frame" x="0.0" y="581" width="138" height="271"/>
+                                    </imageView>
+                                </subviews>
+                                <viewLayoutGuide key="safeArea" id="1Sg-kF-6xy"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="JFK-rf-1NB" firstAttribute="leading" secondItem="1Sg-kF-6xy" secondAttribute="leading" id="ReN-BI-pff"/>
+                                    <constraint firstItem="1Sg-kF-6xy" firstAttribute="trailing" secondItem="JFK-rf-1NB" secondAttribute="trailing" constant="255" id="Wbp-0p-RgY"/>
+                                    <constraint firstItem="1Sg-kF-6xy" firstAttribute="trailing" secondItem="wkg-fV-GV2" secondAttribute="trailing" constant="64" id="bdl-87-Ps7"/>
+                                    <constraint firstItem="wkg-fV-GV2" firstAttribute="top" secondItem="Pru-gG-naY" secondAttribute="top" id="cWq-uW-6iz"/>
+                                    <constraint firstAttribute="bottom" secondItem="JFK-rf-1NB" secondAttribute="bottom" id="hh3-Ck-kVb"/>
+                                    <constraint firstItem="wkg-fV-GV2" firstAttribute="leading" secondItem="1Sg-kF-6xy" secondAttribute="leading" id="vRJ-dh-EfI"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
@@ -25,6 +49,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bottomImage" width="95" height="271"/>
+        <image name="topImage" width="390" height="119"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

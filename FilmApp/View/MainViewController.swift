@@ -10,9 +10,14 @@ import UIKit
 class MainViewController: UIViewController {
     
     var movieViewModel = MoviesViewModel(service: Service())
-    var searchResult : [Movie] = []
     let searchController = UISearchController()
-    
+    var searchResult : [Movie] = [] {
+        didSet {
+            emptyView.isHidden = searchResult.count > 0
+        }
+    }
+ 
+    @IBOutlet weak var emptyView: UIView!
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -21,8 +26,7 @@ class MainViewController: UIViewController {
     }
     
     func configure() {
-        title = "Search"
-        searchController.searchResultsUpdater = self
+        title = searchTitle
         searchController.searchBar.delegate = self
         navigationItem.searchController = searchController
         registerTableView()
@@ -44,18 +48,17 @@ class MainViewController: UIViewController {
     
 }
 
-extension MainViewController: UISearchResultsUpdating, UISearchBarDelegate {
+extension MainViewController:  UISearchBarDelegate {
     
-    func updateSearchResults(for searchController: UISearchController) {
-        guard let text = searchController.searchBar.text else {
-            return
-        }
-        let searchName = text.trimmingCharacters(in: .whitespacesAndNewlines)
-        DispatchQueue.main.async {
-            self.fetch(searchName: searchName)
-        }
-       
-    }
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+          guard let searchText = searchBar.text?.trimmingCharacters(in: .whitespacesAndNewlines), !searchText.isEmpty else {
+              return
+          }
+          
+          DispatchQueue.main.async {
+              self.fetch(searchName: searchText)
+          }
+      }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
           if searchText.isEmpty {
@@ -95,5 +98,8 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
   
+        let vc = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController
+        vc?.selectedName = self.searchResult[indexPath.row].title
+        navigationController?.pushViewController(vc!, animated: true)
     }
 }

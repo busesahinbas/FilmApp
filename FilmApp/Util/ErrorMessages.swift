@@ -7,11 +7,11 @@
 
 import Foundation
 
-enum Title: String {
+enum ErrorTitle: String {
     case ok = "OK"
     case error = "Error"
 }
 
-enum Message: String {
+enum ErrorMessage: String {
     case internet = "Please check your Internet connection."
 }

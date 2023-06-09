@@ -1,21 +1,21 @@
 //
-//  MoviesViewModel.swift
+//  DetailViewModel.swift
 //  FilmApp
 //
-//  Created by Buse Şahinbaş on 7.06.2023.
+//  Created by Buse Şahinbaş on 9.06.2023.
 //
 
 import Foundation
 import Alamofire
 
-class MoviesViewModel {
+class DetailViewModel {
     
     var didFinishFetch: (() -> ())?
     private var service : Service?
-    var movieResult : [Movie]?
+    var detailResult : Detail?
     var error : Error? {
         didSet {
-            print(error)
+            print("error")
         }
     }
     
@@ -25,14 +25,12 @@ class MoviesViewModel {
     
     func searchMovie(title: String) {
         
-        self.service?.fetchMovies(withTitle: title, completion: { searchResult, error in
+        self.service?.fetchDetail(withTitle: title, completion: { searchResult, error in
             if let error = error {
                 self.error = error
-                self.movieResult = []
-                self.didFinishFetch?()
                 return
             }
-            self.movieResult = searchResult
+            self.detailResult = searchResult
             self.didFinishFetch?()
         })
     }

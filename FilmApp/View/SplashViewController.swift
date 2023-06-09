@@ -21,12 +21,12 @@ class SplashViewController: UIViewController {
     
     func checkInternetConnection() {
         let monitor = NWPathMonitor()
-        let queue = DispatchQueue(label: "InternetConnectionMonitor")
+        let queue = DispatchQueue(label: internetMonitor)
         
         monitor.pathUpdateHandler = { path in
             if path.status == .satisfied {
                 DispatchQueue.main.async {
-                    fetchRemoteConfig(configName: "companyName", view: self) { configValue in
+                    fetchRemoteConfig(configName: companyName, view: self) { configValue in
                         // Handle the fetched config value here
                         self.companyLabel.text = configValue
                     }
@@ -41,11 +41,9 @@ class SplashViewController: UIViewController {
         monitor.start(queue: queue)
     }
     
-    
-    
     func navigateToMainView() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            self.performSegue(withIdentifier: "toMainView", sender: nil)
+            self.performSegue(withIdentifier: mainViewSegue, sender: nil)
         }
     }
 }

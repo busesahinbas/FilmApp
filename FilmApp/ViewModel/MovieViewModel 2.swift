@@ -15,7 +15,7 @@ class MoviesViewModel {
     var movieResult : [Movie]?
     var error : Error? {
         didSet {
-            print(error)
+            print("error")
         }
     }
     
@@ -28,8 +28,6 @@ class MoviesViewModel {
         self.service?.fetchMovies(withTitle: title, completion: { searchResult, error in
             if let error = error {
                 self.error = error
-                self.movieResult = []
-                self.didFinishFetch?()
                 return
             }
             self.movieResult = searchResult
