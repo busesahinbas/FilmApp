@@ -8,7 +8,18 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-
+    
+    
+    @IBOutlet weak var loadingView: UIView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var rateLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var countryLabel: UILabel!
+    @IBOutlet weak var directorLabel: UILabel!
+    @IBOutlet weak var boxLabel: UILabel!
+    @IBOutlet weak var plotTextView: UITextView!
+    
     var detailViewModel = DetailViewModel(service: Service())
     var detailResult : Detail?
     var selectedName : String?
@@ -32,6 +43,8 @@ class DetailViewController: UIViewController {
             DispatchQueue.main.async {
                 self.detailResult = self.detailViewModel.detailResult
                 print(self.detailResult)
+                self.configure(result: self.detailResult!)
+                self.loadingView.isHidden = true
             }
         }
     }
