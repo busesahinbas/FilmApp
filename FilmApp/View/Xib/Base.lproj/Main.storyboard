@@ -289,15 +289,32 @@
                                     <constraint firstItem="fTu-Cn-Z7Y" firstAttribute="top" secondItem="HqL-8y-5hj" secondAttribute="bottom" constant="8" id="lzr-vn-z0D"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cvn-cM-l09">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="loading" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gw0-hP-cK9">
+                                        <rect key="frame" x="158" y="355" width="56" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Jno-tx-Uzt"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="UgQ-1r-2DR" firstAttribute="leading" secondItem="Jno-tx-Uzt" secondAttribute="leading" id="6Ra-KC-cAa"/>
+                            <constraint firstItem="Cvn-cM-l09" firstAttribute="leading" secondItem="Jno-tx-Uzt" secondAttribute="leading" id="BC7-JU-rTk"/>
                             <constraint firstItem="SQz-ai-joU" firstAttribute="trailing" secondItem="Jno-tx-Uzt" secondAttribute="trailing" id="CNT-Ws-ydu"/>
+                            <constraint firstItem="Cvn-cM-l09" firstAttribute="top" secondItem="Jno-tx-Uzt" secondAttribute="top" id="Enc-T4-Yte"/>
                             <constraint firstItem="UgQ-1r-2DR" firstAttribute="bottom" secondItem="Jno-tx-Uzt" secondAttribute="bottom" id="GfT-qh-JO9"/>
                             <constraint firstItem="SQz-ai-joU" firstAttribute="leading" secondItem="Jno-tx-Uzt" secondAttribute="leading" id="QGh-9y-xjy"/>
+                            <constraint firstItem="Cvn-cM-l09" firstAttribute="bottom" secondItem="Jno-tx-Uzt" secondAttribute="bottom" id="X7m-cr-OXd"/>
                             <constraint firstItem="UgQ-1r-2DR" firstAttribute="top" secondItem="SQz-ai-joU" secondAttribute="bottom" id="YFA-gU-5bX"/>
+                            <constraint firstItem="Jno-tx-Uzt" firstAttribute="trailing" secondItem="Cvn-cM-l09" secondAttribute="trailing" id="aHu-FI-S1Y"/>
                             <constraint firstItem="SQz-ai-joU" firstAttribute="top" secondItem="Jno-tx-Uzt" secondAttribute="top" id="fph-Wr-8SU"/>
                             <constraint firstItem="UgQ-1r-2DR" firstAttribute="trailing" secondItem="Jno-tx-Uzt" secondAttribute="trailing" id="mRu-ph-SKX"/>
                         </constraints>
@@ -307,6 +324,7 @@
                         <outlet property="countryLabel" destination="hFs-1l-mue" id="0Vy-tk-U4g"/>
                         <outlet property="dateLabel" destination="csA-4w-Ayt" id="hmz-OA-80D"/>
                         <outlet property="directorLabel" destination="N3v-6V-o8Z" id="Rmf-SN-1Hn"/>
+                        <outlet property="loadingView" destination="Cvn-cM-l09" id="7yl-lq-4To"/>
                         <outlet property="plotTextView" destination="fTu-Cn-Z7Y" id="At9-A2-Fp0"/>
                         <outlet property="rateLabel" destination="t2f-qh-ShQ" id="TJw-Qt-mJt"/>
                         <outlet property="timeLabel" destination="waa-Iv-lg4" id="8qN-cH-nGu"/>
