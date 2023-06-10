@@ -32,7 +32,7 @@ class MoviesViewModel {
                 self.didFinishFetch?()
                 return
             }
-            self.movieResult = searchResult
+            self.movieResult = searchResult?.filter { $0.type == "movie" }
             self.didFinishFetch?()
         })
     }

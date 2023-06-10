@@ -19,7 +19,7 @@ enum Endpoints {
         case .search:
             return apiUrl + "&s="
         case .detail:
-            return apiUrl + "&t="
+            return apiUrl + "&i="
         }
     }
 }

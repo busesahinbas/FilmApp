@@ -99,7 +99,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
   
         let vc = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController
-        vc?.selectedName = self.searchResult[indexPath.row].title
+        vc?.selectedID = self.searchResult[indexPath.row].imdbID
         navigationController?.pushViewController(vc!, animated: true)
     }
 }

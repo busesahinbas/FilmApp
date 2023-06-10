@@ -21,3 +21,8 @@ func showAlert(title: ErrorTitle, message: String, view: UIViewController) {
     alertController.addAction(okAction)
     view.present(alertController, animated: true, completion: nil)
 }
+
+func safelyHandleNA(value: String) -> String {
+    return value.contains("N/A") ? "-" : value
+}
+
