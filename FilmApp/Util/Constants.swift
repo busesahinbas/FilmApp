@@ -11,3 +11,4 @@ let companyName = "companyName"
 let internetMonitor = "InternetConnectionMonitor"
 let mainViewSegue = "toMainView"
 let searchTitle = "Search"
+

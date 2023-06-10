@@ -6,19 +6,20 @@
 //
 
 import UIKit
+import Lottie
 
 class MainViewController: UIViewController {
+    
+    @IBOutlet weak var searchAnimationView: AnimationView!
+    @IBOutlet weak var tableView: UITableView!
     
     var movieViewModel = MoviesViewModel(service: Service())
     let searchController = UISearchController()
     var searchResult : [Movie] = [] {
         didSet {
-            emptyView.isHidden = searchResult.count > 0
+            searchAnimationView.isHidden = searchResult.count > 0
         }
     }
- 
-    @IBOutlet weak var emptyView: UIView!
-    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +34,8 @@ class MainViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
+        setLottie(view: searchAnimationView, lottieName: search)
+        
     }
     
     func fetch(searchName: String) {
@@ -40,6 +43,9 @@ class MainViewController: UIViewController {
         movieViewModel.didFinishFetch = {
             DispatchQueue.main.async {
                 self.searchResult = self.movieViewModel.movieResult ?? []
+                if (self.searchResult.count == 0) {
+                    setLottie(view: self.searchAnimationView, lottieName: noData)
+                }
                 print(self.searchResult)
                 self.tableView.reloadData()
             }
@@ -51,23 +57,24 @@ class MainViewController: UIViewController {
 extension MainViewController:  UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-          guard let searchText = searchBar.text?.trimmingCharacters(in: .whitespacesAndNewlines), !searchText.isEmpty else {
-              return
-          }
-          
-          DispatchQueue.main.async {
-              self.fetch(searchName: searchText)
-          }
-      }
+        guard let searchText = searchBar.text?.trimmingCharacters(in: .whitespacesAndNewlines), !searchText.isEmpty else {
+            return
+        }
+        
+        DispatchQueue.main.async {
+            self.fetch(searchName: searchText)
+        }
+    }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-          if searchText.isEmpty {
-              searchResult = [] // Clear the search results
-              tableView.reloadData()
-          }
-      }
+        if searchText.isEmpty {
+            searchResult = [] // Clear the search results
+            setLottie(view: self.searchAnimationView, lottieName: search)
+            tableView.reloadData()
+        }
+    }
 }
- 
+
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     
     func registerTableView(){
@@ -84,7 +91,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         else { return UITableViewCell() }
         
         cell.configure(result: searchResult, indexPath: indexPath)
-    
+        
         return cell
     }
     
@@ -97,7 +104,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-  
+        
         let vc = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController
         vc?.selectedID = self.searchResult[indexPath.row].imdbID
         navigationController?.pushViewController(vc!, animated: true)

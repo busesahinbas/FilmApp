@@ -6,11 +6,11 @@
 //
 
 import UIKit
+import Lottie
 
 class DetailViewController: UIViewController {
     
-    
-    @IBOutlet weak var loadingView: UIView!
+    @IBOutlet weak var loadingView: AnimationView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var rateLabel: UILabel!
@@ -26,6 +26,7 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setLottie(view: loadingView, lottieName: loading)
         DispatchQueue.main.async {
             self.fetch(searchID: self.selectedID ?? "")
         }

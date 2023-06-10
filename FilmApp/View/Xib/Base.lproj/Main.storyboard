@@ -28,6 +28,10 @@
                                 <color key="textColor" red="0.36862745098039218" green="0.67843137254901964" blue="0.74117647058823533" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rNP-v5-xbo" customClass="AnimationView" customModule="Lottie">
+                                <rect key="frame" x="16" y="127" width="361" height="446"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -37,15 +41,20 @@
                             <constraint firstAttribute="bottom" secondItem="zDf-ex-C5E" secondAttribute="bottom" id="4hm-Ok-rnu"/>
                             <constraint firstItem="d5t-Ca-36R" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="BfB-mv-spJ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="d5t-Ca-36R" secondAttribute="trailing" constant="16" id="GbP-IN-bWo"/>
+                            <constraint firstItem="zDf-ex-C5E" firstAttribute="top" secondItem="rNP-v5-xbo" secondAttribute="bottom" constant="8" symbolic="YES" id="I1e-Og-oLa"/>
                             <constraint firstItem="zDf-ex-C5E" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="XhB-iN-48D"/>
+                            <constraint firstItem="rNP-v5-xbo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="ZjE-Gi-4ao"/>
+                            <constraint firstItem="rNP-v5-xbo" firstAttribute="top" secondItem="tvT-6q-J5Y" secondAttribute="bottom" constant="8" symbolic="YES" id="aJ3-V3-lQn"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zDf-ex-C5E" secondAttribute="trailing" constant="255" id="dY8-4y-9ZZ"/>
                             <constraint firstItem="tvT-6q-J5Y" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dnS-A9-poL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rNP-v5-xbo" secondAttribute="trailing" constant="16" id="oEE-pg-7lF"/>
                             <constraint firstItem="d5t-Ca-36R" firstAttribute="top" secondItem="tvT-6q-J5Y" secondAttribute="bottom" constant="288" id="zFj-ny-6Ra"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="2VE-46-Dra"/>
                     <connections>
                         <outlet property="companyLabel" destination="d5t-Ca-36R" id="hqo-2K-cGf"/>
+                        <outlet property="internetAnimationView" destination="rNP-v5-xbo" id="ozX-Et-yyB"/>
                         <segue destination="kHl-6R-PKx" kind="presentation" identifier="toMainView" modalPresentationStyle="fullScreen" id="OdP-vG-2su"/>
                     </connections>
                 </viewController>
@@ -83,17 +92,8 @@
                                 <rect key="frame" x="8" y="111" width="377" height="699"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zTk-ic-jyA">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zTk-ic-jyA" customClass="AnimationView" customModule="Lottie">
                                 <rect key="frame" x="8" y="111" width="377" height="699"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="no data found" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6mm-4X-84L">
-                                        <rect key="frame" x="82" y="252" width="221" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                         </subviews>
@@ -112,7 +112,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="x1Q-mQ-rGc"/>
                     <connections>
-                        <outlet property="emptyView" destination="zTk-ic-jyA" id="QTT-YO-iSe"/>
+                        <outlet property="searchAnimationView" destination="zTk-ic-jyA" id="SfX-10-qjV"/>
                         <outlet property="tableView" destination="vp9-6l-9GO" id="g0n-SM-WHt"/>
                     </connections>
                 </viewController>
@@ -289,17 +289,8 @@
                                     <constraint firstItem="fTu-Cn-Z7Y" firstAttribute="top" secondItem="HqL-8y-5hj" secondAttribute="bottom" constant="8" id="lzr-vn-z0D"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cvn-cM-l09">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cvn-cM-l09" customClass="AnimationView" customModule="Lottie">
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="loading" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gw0-hP-cK9">
-                                        <rect key="frame" x="158" y="355" width="56" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                         </subviews>
