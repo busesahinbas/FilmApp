@@ -13,7 +13,7 @@ struct Detail: Codable {
     let director, actors, plot, country: String
     let poster: String
     let imdbRating, imdbID, type, boxOffice: String
-
+    
     enum CodingKeys: String, CodingKey {
         case title = "Title"
         case year = "Year"
@@ -27,6 +27,37 @@ struct Detail: Codable {
         case imdbRating, imdbID
         case type = "Type"
         case boxOffice = "BoxOffice"
+    }
+    
+    var firstGenre: String {
+        return genre.components(separatedBy: ", ").first ?? "unkown"
+    }
+    
+    var dollar: String {
+        return boxOffice.replacingOccurrences(of: "$", with: "")
+    }
+    
+    var formattedImdbRating: String {
+        return imdbRating + "/10 Imdb"
+    }
+    
+    var formattedDirector: String {
+        let names = director.components(separatedBy: " ")
+        var initials = ""
+
+        if names.count > 1 {
+            for index in 0..<(names.count - 1) {
+                if let firstCharacter = names[index].first {
+                    initials.append("\(firstCharacter). ")
+                }
+            }
+        }
+
+        if let lastWord = names.last {
+            initials += lastWord
+        }
+
+        return initials
     }
 }
 
