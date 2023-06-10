@@ -45,8 +45,8 @@ struct Service {
         }
     }
     
-    func fetchDetail(withTitle title: String, completion: @escaping (Detail?, Error?) -> Void) {
-        let urlString = Endpoints.search.url + title
+    func fetchDetail(withID id: String, completion: @escaping (Detail?, Error?) -> Void) {
+        let urlString = Endpoints.detail.url + id
         
         genericFetch(from: urlString) { (response: Detail?, error) in
             guard let response = response, error == nil else {

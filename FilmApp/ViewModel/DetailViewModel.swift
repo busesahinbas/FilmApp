@@ -23,9 +23,9 @@ class DetailViewModel {
         self.service = service
     }
     
-    func searchMovie(title: String) {
+    func getMovie(id: String) {
         
-        self.service?.fetchDetail(withTitle: title, completion: { searchResult, error in
+        self.service?.fetchDetail(withID: id, completion: { searchResult, error in
             if let error = error {
                 self.error = error
                 return
