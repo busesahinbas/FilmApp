@@ -128,7 +128,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SQz-ai-joU">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SQz-ai-joU">
                                 <rect key="frame" x="0.0" y="59" width="393" height="418"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="418" id="eQZ-w1-yrE"/>
@@ -315,6 +315,7 @@
                         <outlet property="countryLabel" destination="hFs-1l-mue" id="0Vy-tk-U4g"/>
                         <outlet property="dateLabel" destination="csA-4w-Ayt" id="hmz-OA-80D"/>
                         <outlet property="directorLabel" destination="N3v-6V-o8Z" id="Rmf-SN-1Hn"/>
+                        <outlet property="imageView" destination="SQz-ai-joU" id="cMA-Eb-pcv"/>
                         <outlet property="loadingView" destination="Cvn-cM-l09" id="7yl-lq-4To"/>
                         <outlet property="plotTextView" destination="fTu-Cn-Z7Y" id="At9-A2-Fp0"/>
                         <outlet property="rateLabel" destination="t2f-qh-ShQ" id="TJw-Qt-mJt"/>
@@ -345,6 +346,11 @@
             <point key="canvasLocation" x="2023.6641221374045" y="-35.211267605633807"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="Cvn-cM-l09"/>
+        <designable name="rNP-v5-xbo"/>
+        <designable name="zTk-ic-jyA"/>
+    </designables>
     <resources>
         <image name="bottomImage" width="95" height="271"/>
         <image name="calendar.circle" catalog="system" width="128" height="123"/>

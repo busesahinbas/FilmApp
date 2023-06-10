@@ -7,9 +7,11 @@
 
 import UIKit
 import Lottie
+import Kingfisher
 
 class DetailViewController: UIViewController {
     
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var loadingView: AnimationView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
@@ -43,6 +45,14 @@ class DetailViewController: UIViewController {
         boxLabel.text = safelyHandleNA(value: result.dollar)
         plotTextView.text = safelyHandleNA(value: result.plot)
         
+        let downloadUrl = URL(string: (result.poster))!
+        imageView.kf.setImage(with: ImageResource(downloadURL: downloadUrl),
+                              completionHandler: { _ in
+            // Hide the animation view when the image is downloaded
+            self.loadingView.isHidden = true
+        })
+        
+        
     }
     
     func fetch(searchID: String) {
@@ -53,8 +63,8 @@ class DetailViewController: UIViewController {
                 self.detailResult = self.detailViewModel.detailResult
                 print(self.detailResult)
                 self.configure(result: self.detailResult!)
-                self.loadingView.isHidden = true
             }
+            
         }
     }
     

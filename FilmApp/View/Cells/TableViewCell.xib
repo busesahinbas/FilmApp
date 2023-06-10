@@ -17,7 +17,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="378" height="134"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nyX-Ac-N1f">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no_image" translatesAutoresizingMaskIntoConstraints="NO" id="nyX-Ac-N1f">
                         <rect key="frame" x="0.0" y="0.0" width="99" height="134"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="99" id="bB4-5k-upN"/>
@@ -73,6 +73,13 @@
                             <constraint firstItem="CQR-Jk-vQB" firstAttribute="top" secondItem="QDW-P1-2wb" secondAttribute="top" constant="8" id="ivU-R5-LRp"/>
                         </constraints>
                     </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MgZ-VM-98I" customClass="AnimationView" customModule="Lottie">
+                        <rect key="frame" x="0.0" y="0.0" width="99" height="134"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="99" id="K7y-h0-Cco"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstItem="nyX-Ac-N1f" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="2de-x9-MHq"/>
@@ -80,12 +87,17 @@
                     <constraint firstItem="QDW-P1-2wb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="9" id="BCC-ee-TZ9"/>
                     <constraint firstAttribute="bottom" secondItem="nyX-Ac-N1f" secondAttribute="bottom" id="I7c-W6-bPV"/>
                     <constraint firstAttribute="trailing" secondItem="QDW-P1-2wb" secondAttribute="trailing" id="IgH-8p-MgN"/>
+                    <constraint firstItem="MgZ-VM-98I" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="KOi-py-1rS"/>
                     <constraint firstItem="nyX-Ac-N1f" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="N6x-cM-Ian"/>
+                    <constraint firstAttribute="bottom" secondItem="MgZ-VM-98I" secondAttribute="bottom" id="Ra6-Cm-a24"/>
+                    <constraint firstItem="MgZ-VM-98I" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Uz7-0D-6jI"/>
                     <constraint firstAttribute="bottom" secondItem="QDW-P1-2wb" secondAttribute="bottom" id="rk2-Yk-d5g"/>
+                    <constraint firstItem="QDW-P1-2wb" firstAttribute="leading" secondItem="MgZ-VM-98I" secondAttribute="trailing" id="sK6-Xt-rKG"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="animationView" destination="MgZ-VM-98I" id="Y5v-oJ-HPw"/>
                 <outlet property="movieImageView" destination="nyX-Ac-N1f" id="on1-0p-RQr"/>
                 <outlet property="nameLabel" destination="CQR-Jk-vQB" id="rxC-1j-tt3"/>
                 <outlet property="typeLabel" destination="SfC-z8-dJ4" id="4o8-lQ-RpQ"/>
@@ -96,6 +108,7 @@
     </objects>
     <resources>
         <image name="calendar" catalog="system" width="128" height="107"/>
+        <image name="no_image" width="760" height="760"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

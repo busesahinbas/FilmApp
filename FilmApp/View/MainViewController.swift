@@ -70,6 +70,7 @@ extension MainViewController:  UISearchBarDelegate {
         if searchText.isEmpty {
             searchResult = [] // Clear the search results
             setLottie(view: self.searchAnimationView, lottieName: search)
+            searchAnimationView.isHidden = false
             tableView.reloadData()
         }
     }

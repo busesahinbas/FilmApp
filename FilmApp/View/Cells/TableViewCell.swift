@@ -6,10 +6,13 @@
 //
 
 import UIKit
+import Lottie
+import Kingfisher
 
 class TableViewCell: UITableViewCell {
     
     
+    @IBOutlet weak var animationView: AnimationView!
     @IBOutlet weak var movieImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var typeLabel: UILabelPadding!
@@ -19,6 +22,7 @@ class TableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         setUp(label: typeLabel)
+        setLottie(view: animationView, lottieName: loading)
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -38,11 +42,14 @@ class TableViewCell: UITableViewCell {
         yearLabel.text = result[indexPath.row].year
         nameLabel.text = result[indexPath.row].title
       
-        let downloadUrl = URL(string: (result[indexPath.row].poster))!
-       /* movieImageView.kf.setImage(with: ImageResource(downloadURL: downloadUrl),
-                               placeholder: UIImage(named: "loading.gif"),
-                               options: [.processor(RoundCornerImageProcessor(cornerRadius: 50))])
-        */
+        
+        let downloadUrl = URL(string: result[indexPath.row].poster)!
+        movieImageView.kf.setImage(with: ImageResource(downloadURL: downloadUrl),
+                                   options: [.processor(RoundCornerImageProcessor(cornerRadius: 50))],
+                                   completionHandler: { _ in
+            // Hide the animation view when the image is downloaded
+            self.animationView.isHidden = true
+        })
     }
     
 }

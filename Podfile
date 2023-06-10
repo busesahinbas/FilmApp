@@ -9,6 +9,7 @@ pod 'Firebase/RemoteConfig'
 pod 'Firebase/Analytics'
 pod 'Firebase/Messaging'
 pod 'lottie-ios'
+pod 'Kingfisher'
 
   # Pods for FilmApp
 
