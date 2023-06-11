@@ -46,8 +46,9 @@ class DetailViewController: UIViewController {
         boxLabel.text = safelyHandleNA(value: result.dollar)
         plotTextView.text = safelyHandleNA(value: result.plot)
         
-        let downloadUrl = URL(string: (result.poster))!
+        guard let downloadUrl = URL(string: result.poster) else { return }
         imageView.kf.setImage(with: ImageResource(downloadURL: downloadUrl),
+                              placeholder: noImage,
                               options: [.cacheOriginalImage],
                               completionHandler: { _ in
             self.loadingView.isHidden = true

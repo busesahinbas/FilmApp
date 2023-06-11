@@ -6,11 +6,15 @@
 //
 
 import Foundation
+import UIKit
+import Kingfisher
 
 let companyName = "companyName"
 let internetMonitor = "InternetConnectionMonitor"
 let mainViewSegue = "toMainView"
 let searchTitle = "Search"
+let placeholderImage = UIImage(named: "no_image")?.kf.image(withRoundRadius: 50, fit: CGSize(width: 300, height: 423))
+let noImage = UIImage(named: "no_image")
 
 let uuid = UUID().uuidString
 

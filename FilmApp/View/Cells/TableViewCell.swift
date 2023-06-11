@@ -41,10 +41,10 @@ class TableViewCell: UITableViewCell {
         typeLabel.text = result[indexPath.row].type
         yearLabel.text = result[indexPath.row].year
         nameLabel.text = result[indexPath.row].title
-      
         
-        let downloadUrl = URL(string: result[indexPath.row].poster)!
+        guard let downloadUrl = URL(string: result[indexPath.row].poster) else { return }
         movieImageView.kf.setImage(with: ImageResource(downloadURL: downloadUrl),
+                                   placeholder: placeholderImage,
                                    options: [.processor(RoundCornerImageProcessor(cornerRadius: 50)),
                                              .cacheOriginalImage],
                                    completionHandler: { _ in
