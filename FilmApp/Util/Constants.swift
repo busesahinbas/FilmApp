@@ -9,14 +9,25 @@ import Foundation
 import UIKit
 import Kingfisher
 
-let companyName = "companyName"
-let internetMonitor = "InternetConnectionMonitor"
-let mainViewSegue = "toMainView"
-let searchTitle = "Search"
-let placeholderImage = UIImage(named: "no_image")?.kf.image(withRoundRadius: 50, fit: CGSize(width: 300, height: 423))
-let noImage = UIImage(named: "no_image")
-
 let uuid = UUID().uuidString
+
+enum RemoteConfigs {
+    static let companyName = "companyName"
+}
+
+enum LabelTitle {
+    static let searchTitle = "Search"
+    static let internetMonitor = "InternetConnectionMonitor"
+}
+
+enum Segue {
+    static let mainViewSegue = "toMainView"
+}
+
+enum Images {
+    static let roundedNoImage = UIImage(named: "no_image")?.kf.image(withRoundRadius: 50, fit: CGSize(width: 300, height: 423))
+    static let noImage = UIImage(named: "no_image")
+}
 
 enum AnalyticsEventParameter {
     static let title = "Movie_Title"
@@ -30,4 +41,9 @@ enum AnalyticsEventParameter {
 
 enum AnalyticsEventName {
     static let detail = "movie_detail"
+}
+
+enum Views {
+   static let DetailViewController = "DetailViewController"
+   static let TableViewCell = "TableViewCell"
 }

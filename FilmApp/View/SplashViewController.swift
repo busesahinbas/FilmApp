@@ -23,12 +23,12 @@ class SplashViewController: UIViewController {
     
     func checkInternetConnection() {
         let monitor = NWPathMonitor()
-        let queue = DispatchQueue(label: internetMonitor)
+        let queue = DispatchQueue(label: LabelTitle.internetMonitor)
         
         monitor.pathUpdateHandler = { path in
             if path.status == .satisfied {
                 DispatchQueue.main.async {
-                    fetchRemoteConfig(configName: companyName, view: self) { configValue in
+                    fetchRemoteConfig(configName: RemoteConfigs.companyName, view: self) { configValue in
                         // Handle the fetched config value here
                         self.companyLabel.text = configValue
                         self.internetAnimationView.isHidden = true
@@ -47,7 +47,7 @@ class SplashViewController: UIViewController {
     
     func navigateToMainView() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            self.performSegue(withIdentifier: mainViewSegue, sender: nil)
+            self.performSegue(withIdentifier: Segue.mainViewSegue, sender: nil)
         }
     }
 }

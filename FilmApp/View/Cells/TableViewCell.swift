@@ -43,14 +43,10 @@ class TableViewCell: UITableViewCell {
         nameLabel.text = result[indexPath.row].title
         
         guard let downloadUrl = URL(string: result[indexPath.row].poster) else { return }
-        movieImageView.kf.setImage(with: ImageResource(downloadURL: downloadUrl),
-                                   placeholder: placeholderImage,
-                                   options: [.processor(RoundCornerImageProcessor(cornerRadius: 50)),
-                                             .cacheOriginalImage],
-                                   completionHandler: { _ in
-            // Hide the animation view when the image is downloaded
-            self.animationView.isHidden = true
-        })
+        
+        setImageWithRoundedCorners(fromUrl: downloadUrl, imageView: movieImageView, loadingView: animationView)
     }
+    
+    
     
 }

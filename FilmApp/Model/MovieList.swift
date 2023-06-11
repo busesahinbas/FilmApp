@@ -7,6 +7,7 @@
 
 import Foundation
 
+// MARK: - Movie Search Response
 struct MovieListResponse: Codable {
     let movies: [Movie]
     
