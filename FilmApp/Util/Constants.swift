@@ -25,5 +25,5 @@ enum AnalyticsEventParameter {
 }
 
 enum AnalyticsEventName {
-    static let detail = "Movie_Detail"
+    static let detail = "movie_detail"
 }
