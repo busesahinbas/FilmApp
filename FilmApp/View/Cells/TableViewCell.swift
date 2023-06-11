@@ -45,7 +45,8 @@ class TableViewCell: UITableViewCell {
         
         let downloadUrl = URL(string: result[indexPath.row].poster)!
         movieImageView.kf.setImage(with: ImageResource(downloadURL: downloadUrl),
-                                   options: [.processor(RoundCornerImageProcessor(cornerRadius: 50))],
+                                   options: [.processor(RoundCornerImageProcessor(cornerRadius: 50)),
+                                             .cacheOriginalImage],
                                    completionHandler: { _ in
             // Hide the animation view when the image is downloaded
             self.animationView.isHidden = true

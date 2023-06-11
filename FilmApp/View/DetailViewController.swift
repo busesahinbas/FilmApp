@@ -7,6 +7,7 @@
 
 import UIKit
 import Lottie
+import Firebase
 import Kingfisher
 
 class DetailViewController: UIViewController {
@@ -17,7 +18,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var rateLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var countryLabel: UILabel!
+    @IBOutlet weak var genreLabel: UILabel!
     @IBOutlet weak var directorLabel: UILabel!
     @IBOutlet weak var boxLabel: UILabel!
     @IBOutlet weak var plotTextView: UITextView!
@@ -40,19 +41,21 @@ class DetailViewController: UIViewController {
         dateLabel.text = safelyHandleNA(value: result.year)
         rateLabel.text = safelyHandleNA(value: result.formattedImdbRating)
         timeLabel.text = safelyHandleNA(value: result.runtime)
-        countryLabel.text = safelyHandleNA(value: result.firstGenre)
+        genreLabel.text = safelyHandleNA(value: result.firstGenre)
         directorLabel.text = safelyHandleNA(value: result.formattedDirector)
         boxLabel.text = safelyHandleNA(value: result.dollar)
         plotTextView.text = safelyHandleNA(value: result.plot)
         
         let downloadUrl = URL(string: (result.poster))!
         imageView.kf.setImage(with: ImageResource(downloadURL: downloadUrl),
+                              options: [.cacheOriginalImage],
                               completionHandler: { _ in
-            // Hide the animation view when the image is downloaded
             self.loadingView.isHidden = true
         })
-        
-        
+        DispatchQueue.main.async {
+            analtytics(data: self.detailResult!)
+        }
+       
     }
     
     func fetch(searchID: String) {

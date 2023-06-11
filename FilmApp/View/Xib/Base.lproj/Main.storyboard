@@ -312,9 +312,9 @@
                     </view>
                     <connections>
                         <outlet property="boxLabel" destination="GqL-kP-XaW" id="Gvb-Ia-Iyr"/>
-                        <outlet property="countryLabel" destination="hFs-1l-mue" id="0Vy-tk-U4g"/>
                         <outlet property="dateLabel" destination="csA-4w-Ayt" id="hmz-OA-80D"/>
                         <outlet property="directorLabel" destination="N3v-6V-o8Z" id="Rmf-SN-1Hn"/>
+                        <outlet property="genreLabel" destination="hFs-1l-mue" id="0Vy-tk-U4g"/>
                         <outlet property="imageView" destination="SQz-ai-joU" id="cMA-Eb-pcv"/>
                         <outlet property="loadingView" destination="Cvn-cM-l09" id="7yl-lq-4To"/>
                         <outlet property="plotTextView" destination="fTu-Cn-Z7Y" id="At9-A2-Fp0"/>
