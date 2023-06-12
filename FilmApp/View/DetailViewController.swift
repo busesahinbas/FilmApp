@@ -12,7 +12,8 @@ import Kingfisher
 
 class DetailViewController: UIViewController {
     
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var posterImageView: UIImageView!
+    @IBOutlet weak var blurImageView: UIImageView!
     @IBOutlet weak var loadingView: AnimationView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
@@ -46,13 +47,13 @@ class DetailViewController: UIViewController {
         boxLabel.text = safelyHandleNA(value: result.dollar)
         plotTextView.text = safelyHandleNA(value: result.plot)
         
+        
         guard let downloadUrl = URL(string: result.poster) else { return }
-        imageView.kf.setImage(with: ImageResource(downloadURL: downloadUrl),
-                              placeholder: noImage,
-                              options: [.cacheOriginalImage],
-                              completionHandler: { _ in
-            self.loadingView.isHidden = true
-        })
+    
+        setBlurredImage(withUrl: downloadUrl, blurImageView: blurImageView)
+        
+        setImageWithoutCorners(fromUrl: downloadUrl, imageView: posterImageView, loadingView: loadingView)
+         
         DispatchQueue.main.async {
             analtytics(data: self.detailResult!)
         }

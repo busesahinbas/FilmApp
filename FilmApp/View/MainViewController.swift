@@ -27,7 +27,7 @@ class MainViewController: UIViewController {
     }
     
     func configure() {
-        title = searchTitle
+        title = LabelTitle.searchTitle
         searchController.searchBar.delegate = self
         navigationItem.searchController = searchController
         registerTableView()
@@ -79,7 +79,7 @@ extension MainViewController:  UISearchBarDelegate {
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     
     func registerTableView(){
-        tableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "TableViewCell")
+        tableView.register(UINib(nibName: Views.TableViewCell, bundle: nil), forCellReuseIdentifier: Views.TableViewCell)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -88,7 +88,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as? TableViewCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Views.TableViewCell, for: indexPath) as? TableViewCell
         else { return UITableViewCell() }
         
         cell.configure(result: searchResult, indexPath: indexPath)
@@ -106,7 +106,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let vc = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController
+        let vc = storyboard?.instantiateViewController(withIdentifier: Views.DetailViewController) as? DetailViewController
         vc?.selectedID = self.searchResult[indexPath.row].imdbID
         navigationController?.pushViewController(vc!, animated: true)
     }

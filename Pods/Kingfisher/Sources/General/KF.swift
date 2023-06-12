@@ -164,11 +164,11 @@ extension KF.Builder {
     ///            This value is `nil` if the image is being loaded from cache.
     @discardableResult
     public func set(to attachment: NSTextAttachment, attributedView: @autoclosure @escaping () -> KFCrossPlatformView) -> DownloadTask? {
-        let placeholderImage = placeholder as? KFCrossPlatformImage ?? nil
+        let roundedNoImage = placeholder as? KFCrossPlatformImage ?? nil
         return attachment.kf.setImage(
             with: source,
             attributedView: attributedView,
-            placeholder: placeholderImage,
+            placeholder: roundedNoImage,
             parsedOptions: options,
             progressBlock: progressBlock,
             completionHandler: resultHandler
@@ -185,11 +185,11 @@ extension KF.Builder {
     ///            This value is `nil` if the image is being loaded from cache.
     @discardableResult
     public func set(to button: UIButton, for state: UIControl.State) -> DownloadTask? {
-        let placeholderImage = placeholder as? KFCrossPlatformImage ?? nil
+        let roundedNoImage = placeholder as? KFCrossPlatformImage ?? nil
         return button.kf.setImage(
             with: source,
             for: state,
-            placeholder: placeholderImage,
+            placeholder: roundedNoImage,
             parsedOptions: options,
             progressBlock: progressBlock,
             completionHandler: resultHandler
@@ -204,11 +204,11 @@ extension KF.Builder {
     ///            This value is `nil` if the image is being loaded from cache.
     @discardableResult
     public func setBackground(to button: UIButton, for state: UIControl.State) -> DownloadTask? {
-        let placeholderImage = placeholder as? KFCrossPlatformImage ?? nil
+        let roundedNoImage = placeholder as? KFCrossPlatformImage ?? nil
         return button.kf.setBackgroundImage(
             with: source,
             for: state,
-            placeholder: placeholderImage,
+            placeholder: roundedNoImage,
             parsedOptions: options,
             progressBlock: progressBlock,
             completionHandler: resultHandler
@@ -226,10 +226,10 @@ extension KF.Builder {
     @available(iOS 14.0, *)
     @discardableResult
     public func set(to listItem: CPListItem) -> DownloadTask? {
-        let placeholderImage = placeholder as? KFCrossPlatformImage ?? nil
+        let roundedNoImage = placeholder as? KFCrossPlatformImage ?? nil
         return listItem.kf.setImage(
             with: source,
-            placeholder: placeholderImage,
+            placeholder: roundedNoImage,
             parsedOptions: options,
             progressBlock: progressBlock,
             completionHandler: resultHandler
@@ -246,10 +246,10 @@ extension KF.Builder {
     ///            This value is `nil` if the image is being loaded from cache.
     @discardableResult
     public func set(to button: NSButton) -> DownloadTask? {
-        let placeholderImage = placeholder as? KFCrossPlatformImage ?? nil
+        let roundedNoImage = placeholder as? KFCrossPlatformImage ?? nil
         return button.kf.setImage(
             with: source,
-            placeholder: placeholderImage,
+            placeholder: roundedNoImage,
             parsedOptions: options,
             progressBlock: progressBlock,
             completionHandler: resultHandler
@@ -262,10 +262,10 @@ extension KF.Builder {
     ///            This value is `nil` if the image is being loaded from cache.
     @discardableResult
     public func setAlternative(to button: NSButton) -> DownloadTask? {
-        let placeholderImage = placeholder as? KFCrossPlatformImage ?? nil
+        let roundedNoImage = placeholder as? KFCrossPlatformImage ?? nil
         return button.kf.setAlternateImage(
             with: source,
-            placeholder: placeholderImage,
+            placeholder: roundedNoImage,
             parsedOptions: options,
             progressBlock: progressBlock,
             completionHandler: resultHandler
@@ -299,10 +299,10 @@ extension KF.Builder {
     @available(tvOS 12.0, *)
     @discardableResult
     public func set(to monogramView: TVMonogramView) -> DownloadTask? {
-        let placeholderImage = placeholder as? KFCrossPlatformImage ?? nil
+        let roundedNoImage = placeholder as? KFCrossPlatformImage ?? nil
         return monogramView.kf.setImage(
             with: source,
-            placeholder: placeholderImage,
+            placeholder: roundedNoImage,
             parsedOptions: options,
             progressBlock: progressBlock,
             completionHandler: resultHandler

@@ -7,7 +7,7 @@
 
 import Foundation
 
-// MARK: - Detail
+// MARK: - Movie Detail Response
 struct Detail: Codable {
     let title, year, runtime, genre: String
     let director, actors, plot, country: String

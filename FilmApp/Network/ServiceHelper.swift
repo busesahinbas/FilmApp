@@ -7,9 +7,13 @@
 
 import Foundation
 
+//MARK: - API Key
 let apiKey = "896af7be"
+
+//MARK: - Base Url
 let apiUrl = "https://www.omdbapi.com/?apikey=\(apiKey)"
 
+// MARK: - OMDB API Endpoints
 enum Endpoints {
     case search
     case detail
