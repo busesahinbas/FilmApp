@@ -60,6 +60,3 @@ struct Detail: Codable {
         return initials
     }
 }
-
-// MARK: - Request
-struct Detailequest: Codable {}

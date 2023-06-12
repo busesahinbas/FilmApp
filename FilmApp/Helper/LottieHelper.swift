@@ -8,11 +8,6 @@
 import Foundation
 import Lottie
 
-let noData = "no_data"
-let search = "search"
-let loading = "load"
-let noInternet = "no_internet"
-
 func setLottie(view: AnimationView, lottieName: String) {
     view.animation = Animation.named(lottieName)
     view.contentMode = .scaleAspectFit

@@ -13,7 +13,6 @@ final class FilmAppTests: XCTestCase {
     let util = Util()
     
     func testSafelyHandleNA() {
-        
         let input1 = "N/A"
         let input2 = ""
         let input3 = "Hello"
@@ -31,7 +30,6 @@ final class FilmAppTests: XCTestCase {
     }
     
     func testFormattedSearchTitle() {
-        
         let input1 = "test test"
         let input2 = "  hello world "
         let input3 = "search movie"
@@ -44,5 +42,4 @@ final class FilmAppTests: XCTestCase {
         XCTAssertEqual(output2, "hello+world")
         XCTAssertEqual(output3, "search+movie")
     }
-    
 }

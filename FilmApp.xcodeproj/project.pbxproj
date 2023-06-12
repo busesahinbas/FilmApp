@@ -19,7 +19,6 @@
 		4D3F79462A309B5E00AF6922 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4D3F79452A309B5E00AF6922 /* GoogleService-Info.plist */; };
 		4D4BA2102A328DC700E6BB92 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4BA20E2A328DC700E6BB92 /* TableViewCell.swift */; };
 		4D4BA2132A328DE500E6BB92 /* UILabelPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4BA2122A328DE500E6BB92 /* UILabelPadding.swift */; };
-		4D4BA2152A332FDE00E6BB92 /* launch.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4D4BA2142A332FDE00E6BB92 /* launch.gif */; };
 		4D4BA2192A33552500E6BB92 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4BA2182A33552500E6BB92 /* DetailViewController.swift */; };
 		4D4BA21B2A33577A00E6BB92 /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4BA21A2A33577A00E6BB92 /* Detail.swift */; };
 		4D4BA21D2A3357AB00E6BB92 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4BA21C2A3357AB00E6BB92 /* DetailViewModel.swift */; };
@@ -40,7 +39,7 @@
 		4DCA34EF2A338BA5004B1756 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCA34EE2A338BA5004B1756 /* Constants.swift */; };
 		4DD93F8F2A34C38800916E4E /* no_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DD93F8E2A34C38800916E4E /* no_data.json */; };
 		4DD93F912A34C6EA00916E4E /* search.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DD93F902A34C6EA00916E4E /* search.json */; };
-		4DD93F942A34C77000916E4E /* Lottie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD93F932A34C77000916E4E /* Lottie.swift */; };
+		4DD93F942A34C77000916E4E /* LottieHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD93F932A34C77000916E4E /* LottieHelper.swift */; };
 		4DD93F962A34CC4E00916E4E /* load.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DD93F952A34CC4E00916E4E /* load.json */; };
 		4DD93F982A34D10700916E4E /* no_internet.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DD93F972A34D10700916E4E /* no_internet.json */; };
 		DBABBE87F091B767C5A4FA88 /* Pods_FilmAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE97A199D61275CC79CD055D /* Pods_FilmAppTests.framework */; };
@@ -70,7 +69,6 @@
 		4D3F79452A309B5E00AF6922 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4D4BA20E2A328DC700E6BB92 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		4D4BA2122A328DE500E6BB92 /* UILabelPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelPadding.swift; sourceTree = "<group>"; };
-		4D4BA2142A332FDE00E6BB92 /* launch.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = launch.gif; sourceTree = "<group>"; };
 		4D4BA2182A33552500E6BB92 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		4D4BA21A2A33577A00E6BB92 /* Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detail.swift; sourceTree = "<group>"; };
 		4D4BA21C2A3357AB00E6BB92 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
@@ -94,7 +92,7 @@
 		4DCA34EE2A338BA5004B1756 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4DD93F8E2A34C38800916E4E /* no_data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = no_data.json; sourceTree = "<group>"; };
 		4DD93F902A34C6EA00916E4E /* search.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = search.json; sourceTree = "<group>"; };
-		4DD93F932A34C77000916E4E /* Lottie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lottie.swift; sourceTree = "<group>"; };
+		4DD93F932A34C77000916E4E /* LottieHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieHelper.swift; sourceTree = "<group>"; };
 		4DD93F952A34CC4E00916E4E /* load.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = load.json; sourceTree = "<group>"; };
 		4DD93F972A34D10700916E4E /* no_internet.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = no_internet.json; sourceTree = "<group>"; };
 		5C4F6311542A1E557BB4AE0B /* Pods-FilmAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilmAppTests.release.xcconfig"; path = "Target Support Files/Pods-FilmAppTests/Pods-FilmAppTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -149,6 +147,7 @@
 		4D3F792D2A2F5F1600AF6922 /* FilmApp */ = {
 			isa = PBXGroup;
 			children = (
+				4D823A852A3777E40023511A /* Resources */,
 				4DCA34ED2A338B9A004B1756 /* Helper */,
 				4D8507502A30CE4A00100521 /* Network */,
 				4D85074B2A30BE2400100521 /* Util */,
@@ -157,8 +156,6 @@
 				4D8507482A30B64300100521 /* ViewModel */,
 				4D3F79302A2F5F1600AF6922 /* SceneDelegate.swift */,
 				4D3F792E2A2F5F1600AF6922 /* AppDelegate.swift */,
-				4D3F793A2A2F5F1700AF6922 /* Assets.xcassets */,
-				4D4BA2142A332FDE00E6BB92 /* launch.gif */,
 				4D3F793F2A2F5F1700AF6922 /* Info.plist */,
 				4D3F79372A2F5F1600AF6922 /* FilmApp.xcdatamodeld */,
 				4D3F79452A309B5E00AF6922 /* GoogleService-Info.plist */,
@@ -173,6 +170,18 @@
 				4D3F793C2A2F5F1700AF6922 /* LaunchScreen.storyboard */,
 			);
 			path = Xib;
+			sourceTree = "<group>";
+		};
+		4D823A852A3777E40023511A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4D3F793A2A2F5F1700AF6922 /* Assets.xcassets */,
+				4DD93F952A34CC4E00916E4E /* load.json */,
+				4DD93F902A34C6EA00916E4E /* search.json */,
+				4DD93F8E2A34C38800916E4E /* no_data.json */,
+				4DD93F972A34D10700916E4E /* no_internet.json */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		4D8507462A30B62800100521 /* Model */ = {
@@ -246,24 +255,12 @@
 		4DCA34ED2A338B9A004B1756 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				4DD93F922A34C75100916E4E /* Lottie */,
 				4D4BA2122A328DE500E6BB92 /* UILabelPadding.swift */,
+				4DD93F932A34C77000916E4E /* LottieHelper.swift */,
 				4DBBDE5F2A37335B00CF8315 /* ImageHelper.swift */,
 				4DBBDE612A37337800CF8315 /* AlertHelper.swift */,
 			);
 			path = Helper;
-			sourceTree = "<group>";
-		};
-		4DD93F922A34C75100916E4E /* Lottie */ = {
-			isa = PBXGroup;
-			children = (
-				4DD93F932A34C77000916E4E /* Lottie.swift */,
-				4DD93F952A34CC4E00916E4E /* load.json */,
-				4DD93F902A34C6EA00916E4E /* search.json */,
-				4DD93F8E2A34C38800916E4E /* no_data.json */,
-				4DD93F972A34D10700916E4E /* no_internet.json */,
-			);
-			path = Lottie;
 			sourceTree = "<group>";
 		};
 		CCB84B46D6768D70D8D2F7CF /* Frameworks */ = {
@@ -380,7 +377,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D4BA2152A332FDE00E6BB92 /* launch.gif in Resources */,
 				4DCA34EB2A338133004B1756 /* TableViewCell.xib in Resources */,
 				4DD93F8F2A34C38800916E4E /* no_data.json in Resources */,
 				4DD93F982A34D10700916E4E /* no_internet.json in Resources */,
@@ -495,7 +491,7 @@
 				4D8507522A30CE5E00100521 /* RemoteConfig.swift in Sources */,
 				4D4BA2132A328DE500E6BB92 /* UILabelPadding.swift in Sources */,
 				4D3F79392A2F5F1600AF6922 /* FilmApp.xcdatamodeld in Sources */,
-				4DD93F942A34C77000916E4E /* Lottie.swift in Sources */,
+				4DD93F942A34C77000916E4E /* LottieHelper.swift in Sources */,
 				4D85074F2A30BE8300100521 /* ErrorMessages.swift in Sources */,
 				4D3F792F2A2F5F1600AF6922 /* AppDelegate.swift in Sources */,
 				4D85075D2A3111C200100521 /* MovieViewModel.swift in Sources */,
@@ -679,8 +675,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -709,8 +705,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

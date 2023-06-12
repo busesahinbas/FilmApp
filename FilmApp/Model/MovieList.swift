@@ -32,6 +32,3 @@ struct Movie: Codable {
     }
 }
 
-// MARK: - Request
-struct MovieListRequest: Codable {}
-

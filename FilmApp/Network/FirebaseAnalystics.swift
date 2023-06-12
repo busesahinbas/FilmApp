@@ -11,14 +11,15 @@ import FirebaseAnalytics
 
 func analtytics(data : Detail) {
     
-    Analytics.logEvent(AnalyticsEventName.detail, parameters: [EventAnalyticsParameter.title : data.title,
-                                                        EventAnalyticsParameter.year : data.year,
-                                                        EventAnalyticsParameter.rate : data.formattedImdbRating,
-                                                        EventAnalyticsParameter.time : data.runtime,
-                                                        EventAnalyticsParameter.genre : data.firstGenre,
-                                                        EventAnalyticsParameter.director : data.formattedDirector,
-                                                        EventAnalyticsParameter.box : data.boxOffice
-                                                       ])
+    Analytics.logEvent(AnalyticsEventName.detail,
+                       parameters: [EventAnalyticsParameter.title : data.title,
+                                    EventAnalyticsParameter.year : data.year,
+                                    EventAnalyticsParameter.rate : data.formattedImdbRating,
+                                    EventAnalyticsParameter.time : data.runtime,
+                                    EventAnalyticsParameter.genre : data.firstGenre,
+                                    EventAnalyticsParameter.director : data.formattedDirector,
+                                    EventAnalyticsParameter.box : data.boxOffice
+                        ])
 }
 
 

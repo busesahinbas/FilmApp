@@ -11,13 +11,12 @@ import Network
 import FirebaseRemoteConfig
 
 class SplashViewController: UIViewController {
-    
+    // MARK: - IBOutlets
     @IBOutlet weak var internetAnimationView: AnimationView!
     @IBOutlet weak var companyLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         checkInternetConnection()
     }
     
@@ -29,7 +28,6 @@ class SplashViewController: UIViewController {
             if path.status == .satisfied {
                 DispatchQueue.main.async {
                     fetchRemoteConfig(configName: RemoteConfigs.companyName, view: self) { configValue in
-                        // Handle the fetched config value here
                         self.companyLabel.text = configValue
                         self.internetAnimationView.isHidden = true
                     }
@@ -37,7 +35,7 @@ class SplashViewController: UIViewController {
                 }
             } else {
                 DispatchQueue.main.async {
-                    setLottie(view: self.internetAnimationView, lottieName: noInternet)
+                    setLottie(view: self.internetAnimationView, lottieName: LottieName.noInternet)
                     showAlert(title: .error, message: .internet, view: self)
                 }
             }
@@ -45,7 +43,7 @@ class SplashViewController: UIViewController {
         monitor.start(queue: queue)
     }
     
-    func navigateToMainView() {
+    private func navigateToMainView() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             self.performSegue(withIdentifier: Segue.mainViewSegue, sender: nil)
         }

@@ -42,6 +42,13 @@ enum AnalyticsEventName {
 }
 
 enum Views {
-   static let DetailViewController = "DetailViewController"
-   static let TableViewCell = "TableViewCell"
+    static let DetailViewController = "DetailViewController"
+    static let TableViewCell = "TableViewCell"
+}
+
+enum LottieName {
+    static let noData = "no_data"
+    static let search = "search"
+    static let loading = "load"
+    static let noInternet = "no_internet"
 }

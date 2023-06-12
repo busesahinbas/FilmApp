@@ -20,7 +20,7 @@ func fetchRemoteConfig(configName: String, view: UIViewController, completion: @
     remoteConfig.fetchAndActivate { (status, error) in
         if let error = error {
             showAlert(title: .error, message: error.localizedDescription, view: view)
-            completion("") // Call completion with empty string
+            completion("")
             return
         }
         

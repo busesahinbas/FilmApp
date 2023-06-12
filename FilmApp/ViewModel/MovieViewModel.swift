@@ -8,23 +8,17 @@
 import Foundation
 import Alamofire
 
-class MoviesViewModel {
-    
+final class MoviesViewModel {
     var didFinishFetch: (() -> ())?
-    private var service : Service?
-    var movieResult : [Movie]?
-    var error : Error? {
-        didSet {
-            print(error)
-        }
-    }
+    private var service: Service?
+    var movieResult: [Movie]?
+    var error: Error?
     
     init(service: Service? = nil) {
         self.service = service
     }
     
     func searchMovie(title: String) {
-        
         self.service?.fetchMovies(withTitle: title, completion: { searchResult, error in
             if let error = error {
                 self.error = error
@@ -36,6 +30,5 @@ class MoviesViewModel {
             self.didFinishFetch?()
         })
     }
-    
 }
 
