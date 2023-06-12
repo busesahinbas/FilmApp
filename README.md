@@ -28,7 +28,7 @@ The project includes unit tests to ensure the correctness of Util class function
 
 This project is licensed under the [MIT License](LICENSE).
 
-##Screen Shots
+## Screen Shots
 
 <img src="https://github.com/busesahinbas/FilmApp/assets/85345494/65a01d77-6cd2-45c9-86c8-7cc785f70126" width="200">   <img src="https://github.com/busesahinbas/FilmApp/assets/85345494/d1732bb3-8936-47c8-b1ff-5e97a51ec78f" width="200">
 
