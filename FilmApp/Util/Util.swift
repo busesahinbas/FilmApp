@@ -12,7 +12,7 @@ public class Util {
     /// - Parameter value: A string value that needs to be checked
     /// - Returns: Returns value or modified string
     func safelyHandleNA(value: String) -> String {
-        return value.isEmpty || value == "N/A" ? "-" : value
+        return value.isEmpty || value.contains("N/A") ? "-" : value
     }
     
     /// Remove trailing spaces and replace spaces with "+"
@@ -24,9 +24,3 @@ public class Util {
         return formattedString
     }
 }
-
-
-
-
-
-

@@ -26,7 +26,13 @@ class DetailViewController: UIViewController {
     
     // MARK: - Data
     var detailViewModel = DetailViewModel(service: Service())
-    var detailResult : Detail?
+    var detailResult: Detail? {
+        didSet {
+            if detailResult != nil {
+                loadingView.isHidden = true
+            }
+        }
+    }
     var selectedID : String?
     
     override func viewDidLoad() {
