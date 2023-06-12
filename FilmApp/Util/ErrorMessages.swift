@@ -10,8 +10,10 @@ import Foundation
 enum ErrorTitle: String {
     case ok = "OK"
     case error = "Error"
+    case sorry = "Sorry"
 }
 
 enum ErrorMessage: String {
     case internet = "Please check your Internet connection."
+    case noData = "The movie you searched is not found!"
 }

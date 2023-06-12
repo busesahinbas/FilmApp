@@ -52,6 +52,7 @@ class MainViewController: UIViewController {
                 self.searchResult = self.movieViewModel.movieResult ?? []
                 if (self.searchResult.count == 0) {
                     setLottie(view: self.searchAnimationView, lottieName: LottieName.noData)
+                    showAlert(title: .sorry, message: .noData, view: self)
                 }
                 self.tableView.reloadData()
             }
