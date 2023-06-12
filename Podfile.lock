@@ -1,4 +1,6 @@
 PODS:
+  - Firebase (9.4.0):
+    - Firebase/Core (= 9.4.0)
   - Firebase/Analytics (9.4.0):
     - Firebase/Core
   - Firebase/Core (9.4.0):
@@ -117,6 +119,7 @@ PODS:
   - PromisesObjC (2.1.1)
 
 DEPENDENCIES:
+  - Firebase
   - Firebase/Analytics
   - Firebase/Messaging
   - Firebase/RemoteConfig
@@ -160,6 +163,6 @@ SPEC CHECKSUMS:
   nanopb: b552cce312b6c8484180ef47159bc0f65a1f0431
   PromisesObjC: ab77feca74fa2823e7af4249b8326368e61014cb
 
-PODFILE CHECKSUM: c2f814d4d2476dc0718945eb1289b18925bef4d8
+PODFILE CHECKSUM: f427adf8acb141a12dd09f9882f0a5c3393f5e25
 
 COCOAPODS: 1.12.1

@@ -38,14 +38,15 @@ class DetailViewController: UIViewController {
     
     func configure(result: Detail) {
         
-        titleLabel.text = safelyHandleNA(value: result.title)
-        dateLabel.text = safelyHandleNA(value: result.year)
-        rateLabel.text = safelyHandleNA(value: result.formattedImdbRating)
-        timeLabel.text = safelyHandleNA(value: result.runtime)
-        genreLabel.text = safelyHandleNA(value: result.firstGenre)
-        directorLabel.text = safelyHandleNA(value: result.formattedDirector)
-        boxLabel.text = safelyHandleNA(value: result.dollar)
-        plotTextView.text = safelyHandleNA(value: result.plot)
+        let util = Util()
+        titleLabel.text = util.safelyHandleNA(value: result.title)
+        dateLabel.text = util.safelyHandleNA(value: result.year)
+        rateLabel.text = util.safelyHandleNA(value: result.formattedImdbRating)
+        timeLabel.text = util.safelyHandleNA(value: result.runtime)
+        genreLabel.text = util.safelyHandleNA(value: result.firstGenre)
+        directorLabel.text = util.safelyHandleNA(value: result.formattedDirector)
+        boxLabel.text = util.safelyHandleNA(value: result.dollar)
+        plotTextView.text = util.safelyHandleNA(value: result.plot)
         
         
         guard let downloadUrl = URL(string: result.poster) else { return }

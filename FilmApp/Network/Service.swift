@@ -35,7 +35,8 @@ struct Service {
     
     //MARK: - Movie Request
     func fetchMovies(withTitle title: String, completion: @escaping ([Movie]?, Error?) -> Void) {
-        let formattedTitle = formattedSearchTitle(inputSting: title)
+        let util = Util()
+        let formattedTitle = util.formattedSearchTitle(inputSting: title)
         let urlString = Endpoints.search.url + formattedTitle
         
         genericFetch(from: urlString) { (response: MovieListResponse?, error) in

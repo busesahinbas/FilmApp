@@ -13,4 +13,9 @@ pod 'Kingfisher'
 
   # Pods for FilmApp
 
+   target 'FilmAppTests' do
+        inherit! :search_paths
+        pod 'Firebase'
+    end
+
 end
