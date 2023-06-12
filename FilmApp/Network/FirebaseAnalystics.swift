@@ -9,17 +9,15 @@ import Foundation
 import Firebase
 import FirebaseAnalytics
 
-
 func analtytics(data : Detail) {
     
-    Analytics.setUserID(uuid)
-    Analytics.logEvent(AnalyticsEventName.detail, parameters: [AnalyticsEventParameter.title : data.title,
-                                                        AnalyticsEventParameter.year : data.year,
-                                                        AnalyticsEventParameter.rate : data.formattedImdbRating,
-                                                        AnalyticsEventParameter.time : data.runtime,
-                                                        AnalyticsEventParameter.genre : data.firstGenre,
-                                                        AnalyticsEventParameter.director : data.formattedDirector,
-                                                        AnalyticsEventParameter.box : data.boxOffice
+    Analytics.logEvent(AnalyticsEventName.detail, parameters: [EventAnalyticsParameter.title : data.title,
+                                                        EventAnalyticsParameter.year : data.year,
+                                                        EventAnalyticsParameter.rate : data.formattedImdbRating,
+                                                        EventAnalyticsParameter.time : data.runtime,
+                                                        EventAnalyticsParameter.genre : data.firstGenre,
+                                                        EventAnalyticsParameter.director : data.formattedDirector,
+                                                        EventAnalyticsParameter.box : data.boxOffice
                                                        ])
 }
 

@@ -9,8 +9,6 @@ import Foundation
 import UIKit
 import Kingfisher
 
-let uuid = UUID().uuidString
-
 enum RemoteConfigs {
     static let companyName = "companyName"
 }
@@ -29,14 +27,14 @@ enum Images {
     static let noImage = UIImage(named: "no_image")
 }
 
-enum AnalyticsEventParameter {
-    static let title = "Movie_Title"
-    static let year = "Movie_Year"
-    static let rate = "Movie_Rate"
-    static let time = "Movie_Run_Time"
-    static let genre = "Movie_Genre"
-    static let director = "Movie_Director"
-    static let box = "Movie_Box_Office"
+enum EventAnalyticsParameter {
+    static let title = "title"
+    static let year = "year"
+    static let rate = "rate"
+    static let time = "run_time"
+    static let genre = "genre"
+    static let director = "director"
+    static let box = "box_office"
 }
 
 enum AnalyticsEventName {
